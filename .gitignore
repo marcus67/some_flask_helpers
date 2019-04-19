@@ -1,0 +1,13 @@
+.project
+.pydevproject
+MANIFEST
+dist
+*.egg-info
+.project
+__pycache__/*
+htmlcov
+.coverage
+*.iml
+workspace.xml
+.DS_Store
+.idea
