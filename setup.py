@@ -10,7 +10,7 @@ setup_params = {
     "url": "https://github.com/marcus67/flask_helpers",
 
     "install_requires": [
-        'flask==0.12.1'
+        'flask'
     ],
 
     "packages": ['flask_helpers'],
