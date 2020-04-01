@@ -23,5 +23,7 @@ setup_params = {
     "revision": "1"
 }
 
+extended_setup_params = setup_params
+
 if __name__ == '__main__':
     setup(**setup_params)
