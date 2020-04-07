@@ -17,13 +17,14 @@ setup_params = {
     "include_package_data": True,
 
     "long_description": """Really long text here.""",
-
-    # additional setup configuration used by CI stages
-    "id": "flask-helpers",
-    "revision": "1"
 }
 
-extended_setup_params = setup_params
+extended_setup_params = {
+    # additional setup configuration used by CI stages
+    "id": "flask-helpers",
+}
+
+extended_setup_params.update(setup_params)
 
 if __name__ == '__main__':
     setup(**setup_params)
