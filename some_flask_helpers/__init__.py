@@ -15,5 +15,5 @@
 # with this program; if not, write to the Free Software Foundation, Inc.,
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
-from flask_helpers.blueprint_adapter import BlueprintAdapter
-from flask_helpers.flask_stopper import FlaskStopper
+from some_flask_helpers.blueprint_adapter import BlueprintAdapter
+from some_flask_helpers.flask_stopper import FlaskStopper

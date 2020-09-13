@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup_params = {
     # standard setup configuration
-    "name": "flask-helpers",
+    "name": "some-flask-helpers",
     "version": "0.1",
     "description": "Generic tools for Flask applications",
     "author": "Marcus Rickert",
@@ -13,7 +13,7 @@ setup_params = {
         'flask'
     ],
 
-    "packages": ['flask_helpers'],
+    "packages": ['some_flask_helpers'],
     "include_package_data": True,
 
     "long_description": """Really long text here.""",
@@ -21,7 +21,7 @@ setup_params = {
 
 extended_setup_params = {
     # additional setup configuration used by CI stages
-    "id": "flask-helpers",
+    "id": "some-flask-helpers",
 }
 
 extended_setup_params.update(setup_params)
