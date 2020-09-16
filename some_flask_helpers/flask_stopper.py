@@ -23,8 +23,8 @@ from os.path import join
 import flask
 import requests
 
-import flask_helpers
-from flask_helpers import blueprint_adapter
+import some_flask_helpers
+from some_flask_helpers import blueprint_adapter
 
 SHUTDOWN_BLUEPRINT_NAME = "_shutdown"
 SHUTDOWN_BLUEPRINT_ADAPTER = blueprint_adapter.BlueprintAdapter()
@@ -41,7 +41,7 @@ class FlaskStopper(object):
             self._logger = logging.getLogger('flaskstopper')
 
         # Install the shutdown handler
-        self._blueprint = flask.Blueprint(SHUTDOWN_BLUEPRINT_NAME, flask_helpers.__name__)
+        self._blueprint = flask.Blueprint(SHUTDOWN_BLUEPRINT_NAME, some_flask_helpers.__name__)
         SHUTDOWN_BLUEPRINT_ADAPTER.assign_view_handler_instance(p_blueprint=self._blueprint, p_view_handler_instance=self)
         SHUTDOWN_BLUEPRINT_ADAPTER.check_view_methods()
         self._app.register_blueprint(self._blueprint)

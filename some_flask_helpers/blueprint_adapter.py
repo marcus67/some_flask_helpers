@@ -15,11 +15,8 @@
 # with this program; if not, write to the Free Software Foundation, Inc.,
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
-
 import inspect
 import logging
-
-import flask
 
 
 # See https://stackoverflow.com/questions/3589311/get-defining-class-of-unbound-method-object-in-python-3
@@ -82,8 +79,8 @@ class BlueprintAdapter(object):
             if view_method_class is not None and isinstance(p_view_handler_instance, view_method_class):
                 self._assigned_method_routes.append(method_route)
                 p_blueprint.add_url_rule(rule=method_route.rule, endpoint=method_route.endpoint,
-                                  view_func=method_route.create_lambda(p_instance=p_view_handler_instance),
-                                  **method_route.options)
+                                         view_func=method_route.create_lambda(p_instance=p_view_handler_instance),
+                                         **method_route.options)
 
         for method_route in self._assigned_method_routes:
             if method_route in self._unassigned_method_routes:
