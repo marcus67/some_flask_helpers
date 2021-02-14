@@ -22,6 +22,10 @@ See https://github.com/marcus67/some_flask_helpers
 
 ## Versions
 
+### Version 0.2.2 (February 14th 2021)
+
+*   Include required files in MANIFEST.in
+
 ### Version 0.2.1 (February 14th 2021)
 
 *   Activate Markdown for project description on PyPi
