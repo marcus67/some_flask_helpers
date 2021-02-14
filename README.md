@@ -20,6 +20,16 @@ See https://github.com/marcus67/some_flask_helpers
 
 <A HREF="https://github.com/marcus67/some_flask_helpers"><IMG SRC="https://img.shields.io/github/forks/marcus67/some_flask_helpers.svg?label=forks"></A> <A HREF="https://github.com/marcus67/some_flask_helpers/stargazers"><IMG SRC="https://img.shields.io/github/stars/marcus67/some_flask_helpers.svg?label=stars"></A> <A HREF="https://github.com/marcus67/some_flask_helpers/watchers"><IMG SRC="https://img.shields.io/github/watchers/marcus67/some_flask_helpers.svg?label=watchers"></A> <A HREF="https://github.com/marcus67/some_flask_helpers/issues"><IMG SRC="https://img.shields.io/github/issues/marcus67/some_flask_helpers.svg"></A> <A HREF="https://github.com/marcus67/some_flask_helpers/pulls"><IMG SRC="https://img.shields.io/github/issues-pr/marcus67/some_flask_helpers.svg"></A>
 
+## Versions
+
+### Version 0.2 (February 14th 2021)
+
+*   Add test cases
+
+### Version 0.1
+
+*   Initial version
+
 ## Usage Examples ##
 
 See the testcase for usage examples:
