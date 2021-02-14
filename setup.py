@@ -1,4 +1,15 @@
+from os import path
+
 from setuptools import setup
+
+this_directory = path.abspath(path.dirname(__file__))
+
+with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
+    long_description = f.read()
+
+with open(path.join(this_directory, 'requirements.txt')) as f:
+    install_requires = f.read().splitlines()
+
 
 setup_params = {
     # standard setup configuration
@@ -7,16 +18,14 @@ setup_params = {
     "description": "Generic tools for Flask applications",
     "author": "Marcus Rickert",
     "author_email": "marcus.rickert@web.de",
-    "url": "https://github.com/marcus67/flask_helpers",
+    "url": "https://github.com/marcus67/some_flask_helpers",
 
-    "install_requires": [
-        'flask'
-    ],
+    "install_requires": install_requires,
 
     "packages": ['some_flask_helpers'],
     "include_package_data": True,
 
-    "long_description": """Really long text here.""",
+    "long_description": long_description,
 }
 
 extended_setup_params = {
