@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~
     docker:
-      - image: accso/docker-python-app:latest
+      - image: marcusrickert/docker-python-app:latest
     steps:
       - checkout
       - run: apt-get update
