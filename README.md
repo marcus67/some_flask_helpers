@@ -21,7 +21,7 @@ See https://github.com/marcus67/some_flask_helpers
 
 ## Versions
 
-### Version 0.3 (July 5th 2022)
+### Version 0.2.3 (July 5th 2022)
 
 * Terminate flask server by monkey patching `werkzeug.serving.make_server` instead of using 
   request environment setting `werkzeug.server.shutdown`
