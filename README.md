@@ -21,6 +21,10 @@ See https://github.com/marcus67/some_flask_helpers
 
 ## Versions
 
+### Version 0.2.4 (October 12th, 2023)
+
+* Upgrade packages
+
 ### Version 0.2.3 (July 5th 2022)
 
 * Terminate flask server by monkey patching `werkzeug.serving.make_server` instead of using 
