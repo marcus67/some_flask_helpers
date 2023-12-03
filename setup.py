@@ -14,7 +14,7 @@ with open(path.join(this_directory, 'requirements.txt')) as f:
 setup_params = {
     # standard setup configuration
     "name": "some-flask-helpers",
-    "version": "0.2.4",
+    "version": "0.2.5",
     "description": "Generic tools for Flask applications",
     "author": "Marcus Rickert",
     "author_email": "marcus.rickert@web.de",

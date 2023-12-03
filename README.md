@@ -21,6 +21,10 @@ See https://github.com/marcus67/some_flask_helpers
 
 ## Versions
 
+### Version 0.2.5 (October 12th, 2023)
+
+* Bump `werkzeug` to 2.3.8 (CVE-2023-46136)
+
 ### Version 0.2.4 (October 12th, 2023)
 
 * Upgrade packages
