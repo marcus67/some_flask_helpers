@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/usr/bin/env bash
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd ${SCRIPT_DIR}
-python3 -m unittest discover
+python3 ./setup.py sdist

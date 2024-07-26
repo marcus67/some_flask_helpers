@@ -27,6 +27,7 @@ See https://github.com/marcus67/some_flask_helpers
 * Add logging
 * Restrict to Python 3.10 ... 3.12
 * Run Python tests for Python 3.10 ... 3.12
+* Add helper scripts to build and upload
 
 ### Version 0.2.5 (October 12th, 2023)
 
