@@ -21,6 +21,13 @@ See https://github.com/marcus67/some_flask_helpers
 
 ## Versions
 
+### Version 0.2.6 (July 26th, 2024)
+
+* Bump `requests` to 2.32.3
+* Add logging
+* Restrict to Python 3.10 ... 3.12
+* Run Python tests for Python 3.10 ... 3.12
+
 ### Version 0.2.5 (October 12th, 2023)
 
 * Bump `werkzeug` to 2.3.8 (CVE-2023-46136)

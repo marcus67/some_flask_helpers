@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Copyright (C) 2019  Marcus Rickert
+# Copyright (C) 2019-2024  Marcus Rickert
 #
 # See https://github.com/marcus67/some_flask_helpers
 # This program is free software; you can redistribute it and/or modify
@@ -18,6 +18,7 @@
 import inspect
 import logging
 
+LOG_NAME = "blueprint_adapter"
 
 # See https://stackoverflow.com/questions/3589311/get-defining-class-of-unbound-method-object-in-python-3
 def get_class_that_defined_method(meth):
@@ -25,12 +26,16 @@ def get_class_that_defined_method(meth):
         for cls in inspect.getmro(meth.__self__.__class__):
             if cls.__dict__.get(meth.__name__) is meth:
                 return cls
+
         meth = meth.__func__  # fallback to __qualname__ parsing
+
     if inspect.isfunction(meth):
         cls = getattr(inspect.getmodule(meth),
                       meth.__qualname__.split('.<locals>', 1)[0].rsplit('.', 1)[0])
+
         if isinstance(cls, type):
             return cls
+
     return None
 
 
@@ -41,20 +46,37 @@ class MethodRoute(object):
         self.endpoint = p_endpoint
         self.view_method = p_view_method
         self.options = p_options
+        self.instance = None
 
     # Note : the lambda function cannot be created in the loop of method Blueprint.assign_view_instance
-    # since the the loop variable (and hence the view method) will be the same for all instances of
+    # since the loop variable (and hence the view method) will be the same for all instances of
     # the loop. See http://math.andrej.com/2009/04/09/pythons-lambda-is-broken/comment-page-1/
     def create_lambda(self, p_instance):
+        self.instance = p_instance
         return lambda **p_options: self.view_method(p_instance, **p_options)
+
+    def unassign(self):
+        self.instance = None
+
+    @property
+    def instance_name(self):
+        if self.instance is None:
+            return "NOT ASSIGNED TO INSTANCE!"
+
+        return self.instance.__class__.__name__
 
 
 class BlueprintAdapter(object):
+    _logger: logging.Logger = logging.getLogger(LOG_NAME)
 
     def __init__(self):
 
-        self._unassigned_method_routes = []
-        self._assigned_method_routes = []
+        self._unassigned_method_routes: list[MethodRoute] = []
+        self._assigned_method_routes: list[MethodRoute] = []
+
+    @classmethod
+    def set_logger(cls, p_logger: logging.Logger) -> None:
+        cls._logger = p_logger
 
     def route_method(self, p_rule, **p_options):
         """Like :meth:`Flask.route` but for a blueprint.  The endpoint for the
@@ -78,15 +100,24 @@ class BlueprintAdapter(object):
 
             if view_method_class is not None and isinstance(p_view_handler_instance, view_method_class):
                 self._assigned_method_routes.append(method_route)
+
                 p_blueprint.add_url_rule(rule=method_route.rule, endpoint=method_route.endpoint,
                                          view_func=method_route.create_lambda(p_instance=p_view_handler_instance),
                                          **method_route.options)
+                self._logger.debug(
+                    f"Assigning rule '{method_route.rule}' to endpoint '{method_route.endpoint}' "
+                    f"at {method_route.instance_name}")
 
         for method_route in self._assigned_method_routes:
             if method_route in self._unassigned_method_routes:
                 self._unassigned_method_routes.remove(method_route)
 
     def unassign_view_handler_instances(self):
+
+        for method_route in self._assigned_method_routes:
+            self._logger.debug(f"Unassigning rule '{method_route.rule}' from endpoint '{method_route.endpoint}' "
+                               f"at {method_route.instance_name}")
+            method_route.unassign()
 
         self._unassigned_method_routes = self._assigned_method_routes
         self._assigned_method_routes = []
