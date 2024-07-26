@@ -30,3 +30,11 @@ jobs:
       - run: apt-get -y install python3-pip
       - run: pip3 install -r requirements.txt
       - run: PYTHONPATH=some_flask_helpers python3 -m unittest
+
+workflows:
+    version: 2
+    build:
+      jobs:
+        - build_3_10
+        - build_3_11
+        - build_3_12
