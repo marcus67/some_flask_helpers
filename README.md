@@ -21,6 +21,10 @@ See https://github.com/marcus67/some_flask_helpers
 
 ## Versions
 
+### Version 0.2.7 (November 18th, 2024)
+
+* Bump `werkzeug` to 3.1.3
+
 ### Version 0.2.6 (July 26th, 2024)
 
 * Bump `requests` to 2.32.3

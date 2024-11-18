@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+SCRIPT_DIR=$(dirname "$0")
 
 USER=${USER:-marcus.rickert@web.de}
 REPOSITORY_URL=${REPOSITORY_URL:-testpypi}
