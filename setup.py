@@ -15,8 +15,8 @@ setup_params = {
     "python_requires": '>=3.10, <3.13',
 
     # standard setup configuration
-    "name": "some-flask-helpers",
-    "version": "0.2.7",
+    "name": "some_flask_helpers",
+    "version": "0.2.8",
     "description": "Generic tools for Flask applications",
     "author": "Marcus Rickert",
     "author_email": "marcus.rickert@web.de",

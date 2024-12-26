@@ -21,6 +21,10 @@ See https://github.com/marcus67/some_flask_helpers
 
 ## Versions
 
+### Version 0.2.8 (December 26th, 2024)
+
+* Use underscores in pip package name 
+
 ### Version 0.2.7 (November 18th, 2024)
 
 * Bump `werkzeug` to 3.1.3
