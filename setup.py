@@ -12,11 +12,11 @@ with open(path.join(this_directory, 'requirements.txt')) as f:
 
 
 setup_params = {
-    "python_requires": '>=3.10, <3.13',
+    "python_requires": '>=3.10, <3.14',
 
     # standard setup configuration
     "name": "some_flask_helpers",
-    "version": "0.2.8",
+    "version": "0.2.9",
     "description": "Generic tools for Flask applications",
     "author": "Marcus Rickert",
     "author_email": "marcus.rickert@web.de",
