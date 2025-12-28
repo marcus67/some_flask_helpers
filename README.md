@@ -21,6 +21,11 @@ See https://github.com/marcus67/some_flask_helpers
 
 ## Versions
 
+### Version 0.2.10 (December 28th, 2025)
+
+* Bump requests to 2.32.5
+* Allow any minor version for all PyPi packages
+
 ### Version 0.2.9 (December 25th, 2025)
 
 * Support Python 3.13

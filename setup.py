@@ -16,7 +16,7 @@ setup_params = {
 
     # standard setup configuration
     "name": "some_flask_helpers",
-    "version": "0.2.9",
+    "version": "0.2.10",
     "description": "Generic tools for Flask applications",
     "author": "Marcus Rickert",
     "author_email": "marcus.rickert@web.de",
